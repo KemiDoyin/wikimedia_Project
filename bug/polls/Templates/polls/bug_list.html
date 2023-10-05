@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bug List</title>
+</head>
+<body>
+    <h1>Bug List</h1>
+    <ul>
+        {% for bug in bugs %}
+        <li>
+            <a href="{% url 'polls:view_bug' bug.id %}">{{ bug.description }}</a>
+            ({{ bug.get_bug_type_display }} - {{ bug.get_status_display }})
+        </li>
+        {% empty %}
+        <li>No bugs found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'register_bug' %}">Register a New Bug</a>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Bug</title>
+</head>
+<body>
+    <h1>View Bug</h1>
+    <p><strong>Description:</strong> {{ bug.description }}</p>
+    <p><strong>Bug Type:</strong> {{ bug.get_bug_type_display }}</p>
+    <p><strong>Status:</strong> {{ bug.get_status_display }}</p>
+    <a href="{% url 'polls:bug_list' %}">Back to Bug List</a>
+</body>
+</html>
